@@ -75,6 +75,26 @@ class MainActivity : AppCompatActivity() {
             appendOnExpression ("/")
         }
 
+        changeNumberSignButton.setOnClickListener {
+            val expression = resultText.text
+            if(expression.isEmpty())
+                return@setOnClickListener
+            if(expression[0] == '-') {
+                var resString = ""
+                for(i in 1 until expression.length) {
+                    resString += expression[i]
+                }
+                resultText.text = ""
+                resultText.append(resString)
+            } else {
+                var resString = "-"
+                resString += resultText.text
+                resultText.text = ""
+                resultText.append(resString)
+            }
+
+        }
+
         clearButton.setOnClickListener {
             resultText.text = ""
         }
