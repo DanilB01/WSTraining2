@@ -6,10 +6,13 @@ import android.util.Log
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
+import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
 
     private var canBeCleared = false
+    private var isComaAlreadyUsed = false
+    private val maxLength = 9
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,23 +59,30 @@ class MainActivity : AppCompatActivity() {
         }
 
         commaButton.setOnClickListener{
-            appendOnExpression (".")
+            if (ifCanAddComa()) {
+                appendOnExpression(".")
+                isComaAlreadyUsed = true
+            }
         }
 
         plusButton.setOnClickListener{
-            appendOnExpression ("+")
+            if(checkIfLastIsOperand())
+                appendOnExpression ("+")
         }
 
         minusButton.setOnClickListener{
-            appendOnExpression ("-")
+            if(checkIfLastIsOperand())
+                appendOnExpression ("-")
         }
 
         multiplyButton.setOnClickListener{
-            appendOnExpression ("*")
+            if(checkIfLastIsOperand())
+                appendOnExpression ("*")
         }
 
         devideButton.setOnClickListener{
-            appendOnExpression ("/")
+            if(checkIfLastIsOperand())
+                appendOnExpression ("/")
         }
 
         changeNumberSignButton.setOnClickListener {
@@ -80,10 +90,7 @@ class MainActivity : AppCompatActivity() {
             if(expression.isEmpty())
                 return@setOnClickListener
             if(expression[0] == '-') {
-                var resString = ""
-                for(i in 1 until expression.length) {
-                    resString += expression[i]
-                }
+                val resString = expression.drop(1)
                 resultText.text = ""
                 resultText.append(resString)
             } else {
@@ -103,11 +110,17 @@ class MainActivity : AppCompatActivity() {
             try {
                 val expression = ExpressionBuilder(resultText.text.toString()).build()
                 val result = expression.evaluate()
-                val longResult = result.toLong()
-                if (result == longResult.toDouble())
-                    resultText.text = longResult.toString()
-                else
-                    resultText.text = result.toString()
+                val compare = 10.toDouble().pow(maxLength - 1)
+                val checkPoint: Int = (result / compare).toInt()
+                if (checkPoint <= 1) {
+                    val longResult = result.toLong()
+                    if (result == longResult.toDouble())
+                        resultText.text = longResult.toString()
+                    else
+                        resultText.text = result.toString()
+                } else {
+                    resultText.text = "Too long"
+                }
                 canBeCleared = true
             } catch (e: Exception) {
                 Log.d("Exception", "message : " + e.message)
@@ -122,5 +135,43 @@ class MainActivity : AppCompatActivity() {
             canBeCleared = false
         }
             resultText.append(string)
+    }
+
+    private fun checkIfLastIsOperand():Boolean {
+        if(resultText.text.isEmpty())
+            return false
+        if(canBeCleared)
+            return false
+        var s = resultText.text
+        val lastChar = s[s.length - 1]
+        if (lastChar == '+' ||
+            lastChar == '-' ||
+            lastChar == '*' ||
+            lastChar == '/'
+        ) {
+            s = s.dropLast(1)
+            resultText.text = s
+        }
+        isComaAlreadyUsed = false
+        if(s.length == maxLength - 1)
+            return false
+        return true
+    }
+
+    private fun ifCanAddComa(): Boolean {
+        return if(resultText.text.isEmpty())
+            false
+        else {
+            val s = resultText.text
+            val lastChar = s[s.length - 1]
+            if (lastChar == '+' ||
+                lastChar == '-' ||
+                lastChar == '*' ||
+                lastChar == '/'
+            )
+                false
+            else
+                !isComaAlreadyUsed
+        }
     }
 }

@@ -228,6 +228,8 @@
         android:id="@+id/resultText"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:maxLines="1"
+        android:maxLength="9"
         android:layout_marginHorizontal="16dp"
         android:gravity="center|start"
         android:fontFamily="@font/digital_font"
