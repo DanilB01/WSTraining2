@@ -9,21 +9,19 @@
 
     <Button
         android:id="@+id/clearButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        style="@style/whiteButtonStyle"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button__shape"
+        android:text="AC"
         app:layout_constraintBottom_toTopOf="@+id/sevenButton"
         app:layout_constraintEnd_toStartOf="@+id/changeNumberSignButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/valuesView" />
+        app:layout_constraintTop_toBottomOf="@+id/valuesBackgroundView" />
 
     <Button
         android:id="@+id/sixBiutton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/button__shape"
+        style="@style/whiteButtonStyle"
+        android:text="6"
         app:layout_constraintBottom_toTopOf="@+id/threeButton"
         app:layout_constraintEnd_toStartOf="@+id/minusButton"
         app:layout_constraintStart_toEndOf="@+id/fiveButton"
@@ -31,10 +29,9 @@
 
     <Button
         android:id="@+id/oneButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        style="@style/whiteButtonStyle"
+        android:text="1"
         android:layout_marginStart="24dp"
-        android:background="@drawable/button__shape"
         app:layout_constraintBottom_toTopOf="@+id/zeroButton"
         app:layout_constraintEnd_toStartOf="@+id/twoButton"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,10 +39,9 @@
 
     <Button
         android:id="@+id/plusButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/button_shape_blue"
+        style="@style/blueButtonStyle"
+        android:text="+"
         app:layout_constraintBottom_toTopOf="@+id/equalButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/threeButton"
@@ -53,10 +49,9 @@
 
     <Button
         android:id="@+id/minusButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/button_shape_blue"
+        style="@style/blueButtonStyle"
+        android:text="-"
         app:layout_constraintBottom_toTopOf="@+id/plusButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sixBiutton"
@@ -64,10 +59,9 @@
 
     <Button
         android:id="@+id/commaButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/button__shape"
+        style="@style/whiteButtonStyle"
+        android:text=","
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/equalButton"
         app:layout_constraintStart_toStartOf="@+id/threeButton"
@@ -75,33 +69,30 @@
 
     <Button
         android:id="@+id/percentButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button__shape"
+        style="@style/whiteButtonStyle"
+        android:text="%"
         app:layout_constraintBottom_toTopOf="@+id/nineButton"
         app:layout_constraintEnd_toStartOf="@+id/devideButton"
         app:layout_constraintStart_toEndOf="@+id/changeNumberSignButton"
-        app:layout_constraintTop_toBottomOf="@+id/valuesView" />
+        app:layout_constraintTop_toBottomOf="@+id/valuesBackgroundView" />
 
     <Button
         android:id="@+id/devideButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        style="@style/blueButtonStyle"
+        android:text="÷"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/button_shape_blue"
         app:layout_constraintBottom_toTopOf="@+id/multiplyButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/percentButton"
-        app:layout_constraintTop_toBottomOf="@+id/valuesView" />
+        app:layout_constraintTop_toBottomOf="@+id/valuesBackgroundView" />
 
     <Button
         android:id="@+id/sevenButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:layout_marginStart="24dp"
-        android:background="@drawable/button__shape"
+        style="@style/whiteButtonStyle"
+        android:text="7"
         app:layout_constraintBottom_toTopOf="@+id/fourButton"
         app:layout_constraintEnd_toStartOf="@+id/eightButton"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,10 +100,9 @@
 
     <Button
         android:id="@+id/multiplyButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        style="@style/blueButtonStyle"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/button_shape_blue"
+        android:text="X"
         app:layout_constraintBottom_toTopOf="@+id/minusButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/nineButton"
@@ -120,9 +110,8 @@
 
     <Button
         android:id="@+id/threeButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/button__shape"
+        style="@style/whiteButtonStyle"
+        android:text="3"
         app:layout_constraintBottom_toTopOf="@+id/commaButton"
         app:layout_constraintEnd_toStartOf="@+id/plusButton"
         app:layout_constraintStart_toEndOf="@+id/twoButton"
@@ -130,11 +119,10 @@
 
     <Button
         android:id="@+id/equalButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/button_shape_blue"
+        style="@style/blueButtonStyle"
+        android:text="="
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/commaButton"
@@ -142,9 +130,8 @@
 
     <Button
         android:id="@+id/fiveButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/button__shape"
+        style="@style/whiteButtonStyle"
+        android:text="5"
         app:layout_constraintBottom_toTopOf="@+id/twoButton"
         app:layout_constraintEnd_toStartOf="@+id/sixBiutton"
         app:layout_constraintStart_toEndOf="@+id/fourButton"
@@ -152,9 +139,8 @@
 
     <Button
         android:id="@+id/eightButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/button__shape"
+        style="@style/whiteButtonStyle"
+        android:text="8"
         app:layout_constraintBottom_toTopOf="@+id/fiveButton"
         app:layout_constraintEnd_toStartOf="@+id/nineButton"
         app:layout_constraintStart_toEndOf="@+id/sevenButton"
@@ -162,11 +148,11 @@
 
     <Button
         android:id="@+id/zeroButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        style="@style/whiteButtonStyle"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/button__shape"
+        android:text="0"
+        android:background="@drawable/wide_button_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/commaButton"
         app:layout_constraintStart_toStartOf="parent"
@@ -174,9 +160,8 @@
 
     <Button
         android:id="@+id/nineButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/button__shape"
+        style="@style/whiteButtonStyle"
+        android:text="9"
         app:layout_constraintBottom_toTopOf="@+id/sixBiutton"
         app:layout_constraintEnd_toStartOf="@+id/multiplyButton"
         app:layout_constraintStart_toEndOf="@+id/eightButton"
@@ -184,9 +169,8 @@
 
     <Button
         android:id="@+id/twoButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/button__shape"
+        style="@style/whiteButtonStyle"
+        android:text="2"
         app:layout_constraintBottom_toTopOf="@+id/zeroButton"
         app:layout_constraintEnd_toStartOf="@+id/threeButton"
         app:layout_constraintStart_toEndOf="@+id/oneButton"
@@ -194,10 +178,9 @@
 
     <Button
         android:id="@+id/fourButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        style="@style/whiteButtonStyle"
         android:layout_marginStart="24dp"
-        android:background="@drawable/button__shape"
+        android:text="4"
         app:layout_constraintBottom_toTopOf="@+id/oneButton"
         app:layout_constraintEnd_toStartOf="@+id/fiveButton"
         app:layout_constraintHorizontal_bias="0.48"
@@ -206,24 +189,53 @@
 
     <Button
         android:id="@+id/changeNumberSignButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button__shape"
+        style="@style/whiteButtonStyle"
+        android:text="+/-"
         app:layout_constraintBottom_toTopOf="@+id/eightButton"
         app:layout_constraintEnd_toStartOf="@+id/percentButton"
         app:layout_constraintStart_toEndOf="@+id/clearButton"
-        app:layout_constraintTop_toBottomOf="@+id/valuesView" />
+        app:layout_constraintTop_toBottomOf="@+id/valuesBackgroundView" />
 
     <ImageView
-        android:id="@+id/valuesView"
+        android:id="@+id/valuesBackgroundView"
+        android:layout_marginHorizontal="24dp"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleText"
-        app:srcCompat="@drawable/values_background" />
+        android:background="@drawable/values_background" />
+
+    <TextView
+        android:id="@+id/backNumbersView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="000000000"
+        android:textColor="@color/backTextColor"
+        android:gravity="center|start"
+        android:fontFamily="@font/digital_font"
+        android:textSize="64sp"
+        android:src="@drawable/numbers_background"
+        app:layout_constraintBottom_toBottomOf="@+id/valuesBackgroundView"
+        app:layout_constraintEnd_toEndOf="@+id/valuesBackgroundView"
+        app:layout_constraintStart_toStartOf="@+id/valuesBackgroundView"
+        app:layout_constraintTop_toTopOf="@+id/valuesBackgroundView" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:gravity="center|start"
+        android:fontFamily="@font/digital_font"
+        android:textSize="64sp"
+        app:layout_constraintBottom_toBottomOf="@+id/valuesBackgroundView"
+        app:layout_constraintEnd_toEndOf="@+id/valuesBackgroundView"
+        app:layout_constraintStart_toStartOf="@+id/valuesBackgroundView"
+        app:layout_constraintTop_toTopOf="@+id/valuesBackgroundView" />
 
     <TextView
         android:id="@+id/titleText"
@@ -233,25 +245,10 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/museo_font"
         android:text="Calculator"
+        android:textStyle="bold"
         android:textColor="@color/textColor"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/backgroundText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:text="0 0 0 0 0 0 0 0"
-        android:textSize="60sp"
-        android:textColor="@color/backTextColor"
-        android:gravity="center"
-        android:fontFamily="@font/digital_font"
-        app:layout_constraintBottom_toBottomOf="@+id/valuesView"
-        app:layout_constraintEnd_toEndOf="@+id/valuesView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/valuesView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

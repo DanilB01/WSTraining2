@@ -11,5 +11,6 @@
     <color name="textColor">#373A37</color>
     <color name="backTextColor">#b0bca7</color>
     <color name="buttonColor">#F1F3F6</color>
+    <color name="blueButtonColor">#3A4E89</color>
     <color name="backgroundColor">#F1F3F6</color>
 </resources>
