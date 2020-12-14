@@ -3,7 +3,9 @@ package ru.tsu.wstraining2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
+import android.view.View
+import android.widget.Button
+import androidx.constraintlayout.widget.Group
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
 import kotlin.math.pow
@@ -18,45 +20,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        zeroButton.setOnClickListener{
-            appendOnExpression ("0")
+        fun Group.setAllOnClickListener(listener: View.OnClickListener?) {
+            referencedIds.forEach { id ->
+                rootView.findViewById<View>(id).setOnClickListener(listener)
+            }
         }
 
-        oneButton.setOnClickListener{
-            appendOnExpression ("1")
-        }
+        numberButtons.setAllOnClickListener(View.OnClickListener {v ->
+            val button = v as Button
+                appendOnExpression(button.text.toString())
+        })
 
-        twoButton.setOnClickListener{
-            appendOnExpression ("2")
-        }
 
-        threeButton.setOnClickListener{
-            appendOnExpression ("3")
-        }
-
-        fourButton.setOnClickListener{
-            appendOnExpression ("4")
-        }
-
-        fiveButton.setOnClickListener{
-            appendOnExpression ("5")
-        }
-
-        sixBiutton.setOnClickListener{
-            appendOnExpression ("6")
-        }
-
-        sevenButton.setOnClickListener{
-            appendOnExpression ("7")
-        }
-
-        eightButton.setOnClickListener{
-            appendOnExpression ("8")
-        }
-
-        nineButton.setOnClickListener{
-            appendOnExpression ("9")
-        }
 
         commaButton.setOnClickListener{
             if (ifCanAddComa()) {
@@ -65,25 +40,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        plusButton.setOnClickListener{
+        operationButtons.setAllOnClickListener(View.OnClickListener {v ->
+            val button = v as Button
             if(checkIfLastIsOperand())
-                appendOnExpression ("+")
-        }
-
-        minusButton.setOnClickListener{
-            if(checkIfLastIsOperand())
-                appendOnExpression ("-")
-        }
-
-        multiplyButton.setOnClickListener{
-            if(checkIfLastIsOperand())
-                appendOnExpression ("*")
-        }
-
-        devideButton.setOnClickListener{
-            if(checkIfLastIsOperand())
-                appendOnExpression ("/")
-        }
+                appendOnExpression (button.text.toString())
+        })
 
         changeNumberSignButton.setOnClickListener {
             val expression = resultText.text
@@ -91,13 +52,9 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             if(expression[0] == '-') {
                 val resString = expression.drop(1)
-                resultText.text = ""
-                resultText.append(resString)
+                resultText.text = resString
             } else {
-                var resString = "-"
-                resString += resultText.text
-                resultText.text = ""
-                resultText.append(resString)
+                resultText.text = "-${resultText.text}"
             }
 
         }
@@ -119,7 +76,7 @@ class MainActivity : AppCompatActivity() {
                     else
                         resultText.text = result.toString()
                 } else {
-                    resultText.text = "Too long"
+                    resultText.text = getString(R.string.tooLong)
                 }
                 canBeCleared = true
             } catch (e: Exception) {
