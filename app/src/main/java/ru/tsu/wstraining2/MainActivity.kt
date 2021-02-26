@@ -101,10 +101,10 @@ class MainActivity : AppCompatActivity() {
             return false
         var s = resultText.text
         val lastChar = s[s.length - 1]
-        if (lastChar == '+' ||
-            lastChar == '-' ||
-            lastChar == '*' ||
-            lastChar == '/'
+        if (lastChar == Operations.Plus.sign ||
+            lastChar == Operations.Minus.sign ||
+            lastChar == Operations.Multiplication.sign ||
+            lastChar == Operations.Division.sign
         ) {
             s = s.dropLast(1)
             resultText.text = s
@@ -121,10 +121,10 @@ class MainActivity : AppCompatActivity() {
         else {
             val s = resultText.text
             val lastChar = s[s.length - 1]
-            if (lastChar == '+' ||
-                lastChar == '-' ||
-                lastChar == '*' ||
-                lastChar == '/'
+            if (lastChar == Operations.Plus.sign ||
+                lastChar == Operations.Minus.sign ||
+                lastChar == Operations.Multiplication.sign ||
+                lastChar == Operations.Division.sign
             )
                 false
             else
